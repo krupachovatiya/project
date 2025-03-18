@@ -2,24 +2,30 @@ import React, {useState} from "react";
 import './Form.css'
 
 const Form = () => {
-    const [name, setName] = useState('')
+    const [fname, setFname] = useState('')
+    const [lname, setLname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState({
-        name: '',
+        fname: '',
+        lname: '',
         email: '',
         password: ''
     })
 
     const validate = () => {
         let tempErrors = {
-            name: '',
+            fname: '',
+            lname: '',
             email: '',
             password: ''
         }
 
-        if (!name) {
-            tempErrors.name = "Name is required";
+        if (!fname) {
+            tempErrors.fname = "First Name is required";
+        }
+        if (!lname) {
+            tempErrors.lname = "Last Name is required";
         }
         if (!email) {
             tempErrors.email = "Email is required";
@@ -30,18 +36,19 @@ const Form = () => {
             tempErrors.password = "Password must be at least 6 characters";
         }
         setErrors(tempErrors);
-            return !tempErrors.name && !tempErrors.email && !tempErrors.password;
+            return !tempErrors.fname && !tempErrors.lname && !tempErrors.email && !tempErrors.password;
         }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(name, email, password)
+        console.log(fname, lname, email, password)
         if (validate()) {
             alert("Form submitted successfully!");
-            setName("");
+            setFname("");
+            setLname("");
             setEmail("");
             setPassword("");
-            setErrors({ name: "", email: "", password: "" });
+            setErrors({ fname: "", lname: "", email: "", password: "" });
           }
     }
 
@@ -49,9 +56,14 @@ const Form = () => {
         <form onSubmit={handleSubmit}>
             <div>
                 <h1>React</h1>
-                <label>Name: </label>
-                <input type='text' value={name} onChange={(event) => setName(event.target.value)}/>
-                {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
+                <label>First Name: </label>
+                <input type='text' value={fname} onChange={(event) => setFname(event.target.value)}/>
+                {errors.fname && <p style={{ color: "red" }}>{errors.fname}</p>}
+                <br/><br/>
+
+                <label>Last Name: </label>
+                <input type='text' value={lname} onChange={(event) => setLname(event.target.value)}/>
+                {errors.lname && <p style={{ color: "red" }}>{errors.lname}</p>}
                 <br/><br/>
 
                 <label>Email: </label>
