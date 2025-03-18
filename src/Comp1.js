@@ -10,7 +10,10 @@ function Comp1(props) {
             <Comp2 title3 = 'The Power of Now is is '
             description3 = 'A spiritual exploration of mindfulness and living in the present moment.'
             title4 = 'The Psychology of Money'
-            description4 = 'Insights into how emotions and behavior influence financial decisions.'/>       
+            description4 = 'Insights into how emotions and behavior influence financial decisions.'
+            desc_1 = "this is new branch " 
+            desc_2 = "changes in the description"/>  
+                 
         </div>        
     )
 }
