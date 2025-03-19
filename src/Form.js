@@ -25,7 +25,7 @@ const Form = () => {
             tempErrors.fname = "First Name is required";
         }
         if (!lname) {
-            tempErrors.lname = "Last Name is required";
+            tempErrors.lname = "Last Name is required.";
         }
         if (!email) {
             tempErrors.email = "Email is required";
