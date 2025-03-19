@@ -29,9 +29,9 @@ input {
 button {
     width: 50%;
     padding: 8px;
-    background-color: darkgray;
+    background-color: black;
     font-size: 15px;
-    color: black;
+    color: white;
     border-radius: 4px;
     cursor: pointer;
 }
