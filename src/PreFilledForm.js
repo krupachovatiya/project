@@ -34,7 +34,7 @@ const PreFilledForm = () => {
     <div>
         <h2>Pre-Filled Form</h2>
         <div>
-            <textarea placeholder='Title' value={formData.title}/>
+            <input type='text' placeholder='Title' value={formData.title}/>
             <br/><br/>
             <textarea placeholder='Body' value={formData.body}/>
             <br/><br/>
